@@ -55,6 +55,8 @@ const addToProject = async (req, res) => {
   }
 };
 
+const { sendRequestMail } = require('../cron/overdueChecker.js');
+
 const requestItem = async (req, res) => {
   try {
     const { itemId, quantity, reason, returnDate } = req.body;
@@ -96,7 +98,9 @@ const requestItem = async (req, res) => {
       }]
     });
 
+    // Send request email
     await transaction.save();
+    sendRequestMail(transaction,issuerId);
 
     res.status(200).json({ message: 'Item request submitted successfully', transaction });
   } catch (error) {
@@ -251,6 +255,7 @@ const moveReturnDate = async (req, res) => {
 };
 
 
+
 const returnItem = async (req, res) => {
   try {
     const { transactionId} = req.body;
@@ -310,7 +315,7 @@ const returnItem = async (req, res) => {
   }
 };
 
-
+const { sendApprovalMail } = require('../cron/overdueChecker.js');
 const approveRequest = async (req, res) => {
   try {
     const { transactionId } = req.body;
@@ -345,7 +350,7 @@ const approveRequest = async (req, res) => {
       actionDescription: 'Request Approved by owner',
       date: new Date(),
     });
-
+    sendApprovalMail(transaction);
     await transaction.save();
 
     res.status(200).json({ message: 'Transaction approved successfully' });
@@ -356,9 +361,11 @@ const approveRequest = async (req, res) => {
 };
 
 
+const { sendRejectionMail } = require('../cron/overdueChecker.js');
+
 const rejectTransaction = async (req, res) => {
   try {
-    const { transactionId, reason = '' } = req.body;
+    const { transactionId } = req.body;
     const currentUserId = req.user.id;
 
     if (!transactionId) {
@@ -382,10 +389,10 @@ const rejectTransaction = async (req, res) => {
     transaction.currentStatus = 'Rejected';
     transaction.history.push({
       action: 'Rejected',
-      actionDescription: `Request rejected${reason ? ` — Reason: ${reason}` : ''}`,
+      actionDescription: `Request rejected`,
       date: new Date(),
     });
-
+    sendRejectionMail(transaction);
     await transaction.save();
 
     res.status(200).json({ message: 'Transaction rejected successfully' });

@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-const VITE_BACKEND= 'http://localhost:3000'; // Replace with your backend URL
+const VITE_BACKEND= 'https://assetly-yp6t.onrender.com'; // Replace with your backend URL
 const LoginPage: React.FC = () => {
   const [isRegistering, setIsRegistering] = useState(false);
   const [contactNumber, setContactNumber] = useState('');

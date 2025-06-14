@@ -1,15 +1,12 @@
+# Assetly – Inventory Management Web App
 
-<table>
-  <tr>
-    <td>
-      <h1>Assetly – Inventory Management Web App</h1>
-      <p><strong>Assetly</strong> is a modern, full-stack <strong>inventory management</strong> application built with the <strong>MERN stack</strong> (MongoDB, Express.js, React.js, Node.js). Designed for teams, clubs, labs, and organizations, Assetly enables users to <strong>lend, borrow, and track assets</strong> ,such as tools, electronics, books, or lab equipment—with an intuitive UI and smart automation features.</p>
-    </td>
-    <td align="right">
-      <img src="assets/HomePageimg.png" alt="Homepage Screenshot" width="280">
-    </td>
-  </tr>
-</table>
+**Assetly** is a modern, full-stack **inventory management** application built with the **MERN stack** (MongoDB, Express.js, React.js, Node.js). Designed for teams, clubs, labs, and organizations, Assetly enables users to **lend, borrow, and track assets**, such as tools, electronics, books, or lab equipment—with an intuitive UI and smart automation features.
+
+---
+
+## 🏠 Homepage Preview
+
+![Homepage Screenshot](assets/homepage.png)
 
 ---
 
@@ -77,5 +74,3 @@ Developed by [**Shubham Gupta**](https://github.com/shubhamgupta1017)
 ## 📜 License
 
 This project is licensed under the [MIT License](https://chatgpt.com/c/LICENSE).
-
----

@@ -171,7 +171,7 @@ function getTodayISTMidnight() {
   return midnightIST;
 }
 
-cron.schedule('55 20 * * *', async () => {
+cron.schedule('50 21 * * *', async () => {
   try {
     const today = getTodayISTMidnight();
 
@@ -198,11 +198,6 @@ cron.schedule('55 20 * * *', async () => {
       await sendOverdueMail(txn, issuerEmail, ownerEmail, itemName, issuerName);
 
       txn.currentStatus = 'Overdue';
-      txn.history.push({
-        action: 'Overdue',
-        actionDescription: `Marked as overdue on ${today.toDateString()}`,
-        date: today
-      });
 
       await txn.save();
       console.log(`Transaction marked as Overdue and saved for "${itemName}"`);
@@ -213,7 +208,7 @@ cron.schedule('55 20 * * *', async () => {
     console.error('Error in overdue checker:', error);
   }
 }, {
-  timezone: 'UTC' // 🚨 This ensures cron runs at 20:53 UTC = 2:23 AM IST
+  timezone: 'UTC' 
 });
 
 module.exports = {

@@ -33,11 +33,11 @@ router.get("/google/callback", (req, res, next) => {
       process.env.JWT_SECRET,
       { expiresIn: "1h" }
     );
-
+    console.log(token);
     res.cookie("token", token, {
       httpOnly: true,
-      secure: true, // set to true in production with HTTPS
-      sameSite: "Lax",
+      secure: true, 
+      sameSite: "None", // allow cross-site cookies
       maxAge: 60 * 60 * 1000 // 1 hour
     });
 

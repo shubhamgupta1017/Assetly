@@ -17,7 +17,7 @@ const HomePage: React.FC = () => {
           Welcome to <span className="text-indigo-600">Assetly</span>
         </h1>
         <p className="mt-4 text-lg sm:text-xl text-gray-700 max-w-2xl mx-auto">
-          The smartest way to manage club inventory at <strong>IIT Ropar</strong>.
+          The smartest way to manage inventory at your <strong>Organization</strong>.
         </p>
         <p className="mt-2 text-md sm:text-lg text-gray-500 max-w-xl mx-auto italic">
           Track items. Manage requests. Simplify your workflow.

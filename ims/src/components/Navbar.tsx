@@ -55,7 +55,7 @@ const Navbar = () => {
           onClick={() => navigate("/")}
           className="flex items-center space-x-2 cursor-pointer"
         >
-          <img src="../public/logo.png" alt="Logo" className="h-8 w-8" />
+          <img src="../logo.png" alt="Logo" className="h-8 w-8" />
           <div className="text-xl font-bold">Assetly </div>
         </div>
 

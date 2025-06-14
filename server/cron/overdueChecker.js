@@ -12,6 +12,7 @@ const transporter = nodemailer.createTransport({
   },
 });
 
+
 async function sendOverdueMail(transaction, issuerEmail, ownerEmail, itemName, issuerName) {
   console.log(`📨 Sending email for item "${itemName}" to ${issuerEmail} and ${ownerEmail}`);
 

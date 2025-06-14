@@ -36,6 +36,16 @@ app.use(session({
   saveUninitialized: true
 }));
 
+app.use(session({
+  secret: process.env.JWT_SECRET,
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    httpOnly: true,
+    secure: true,        // required for SameSite: 'None'
+    sameSite: 'None'     // allows cross-origin
+  }
+}));
 app.use(passport.initialize());
 app.use(passport.session());
 

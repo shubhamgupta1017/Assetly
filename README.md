@@ -1,7 +1,15 @@
 
-# Assetly – Inventory Management Web App
-
-**Assetly** is a modern, full-stack **inventory management** application built with the **MERN stack** (MongoDB, Express.js, React.js, Node.js). Designed for teams, clubs, labs, and organizations, Assetly enables users to **lend, borrow, and track assets** ,such as tools, electronics, books, or lab equipment—with an intuitive UI and smart automation features.
+<table>
+  <tr>
+    <td>
+      <h1>Assetly – Inventory Management Web App</h1>
+      <p><strong>Assetly</strong> is a modern, full-stack <strong>inventory management</strong> application built with the <strong>MERN stack</strong> (MongoDB, Express.js, React.js, Node.js). Designed for teams, clubs, labs, and organizations, Assetly enables users to <strong>lend, borrow, and track assets</strong> ,such as tools, electronics, books, or lab equipment—with an intuitive UI and smart automation features.</p>
+    </td>
+    <td align="right">
+      <img src="assets/Homepageimg.png" alt="Homepage Screenshot" width="280">
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -11,6 +19,7 @@
 ⚠️ Note: The backend is hosted on a free tier and may take up to **1 minute** to respond after periods of inactivity and is only available to users with a valid IIT ROPAR email.
 
 ---
+
 ## ✨ Features
 
 - 🔁 **Asset Request & Return Workflow**  
@@ -26,7 +35,7 @@
   Scheduled tasks run automatically to identify overdue items and send notifications.
 
 - 👥 **Team Collaboration**  
-  inventory management for clubs, labs, and teams .
+  Inventory management for clubs, labs, and teams.
 
 ---
 

@@ -31,9 +31,8 @@ router.get("/google/callback", (req, res, next) => {
     const token = jwt.sign(
       { id: user._id, email: user.email },
       process.env.JWT_SECRET,
-      { expiresIn: "1h" }
+      { expiresIn: "1d" }
     );
-    console.log(token);
     res.cookie("token", token, {
       httpOnly: true,
       secure: true, 

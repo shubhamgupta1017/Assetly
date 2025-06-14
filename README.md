@@ -6,7 +6,7 @@
 
 ## 🏠 Homepage Preview
 
-![Homepage Screenshot](assets/homepage.png)
+![Homepage Screenshot](assets/HomePageimg.png)
 
 ---
 

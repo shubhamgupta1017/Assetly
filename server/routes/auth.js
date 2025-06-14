@@ -45,17 +45,50 @@ router.get("/google/callback", (req, res, next) => {
 });
 
 router.get('/logout', (req, res) => {
-  req.logout(function(err) {
+  req.logout?.((err) => {
     if (err) {
       return res.status(500).json({ error: 'Logout failed' });
     }
 
-    req.session.destroy(); 
-    res.clearCookie('connect.sid'); // Optional: clears cookie
-    res.clearCookie('token'); // Clear the JWT cookie
-    res.status(200).json({ message: 'Logged out successfully' });
+    if (req.session) {
+      req.session.destroy(() => {
+        res.clearCookie('connect.sid', {
+          path: '/',
+          httpOnly: true,
+          sameSite: 'None',
+          secure: true
+        });
+
+        res.clearCookie('token', {
+          path: '/',
+          httpOnly: true,
+          sameSite: 'None',
+          secure: true
+        });
+
+        return res.status(200).json({ message: 'Logged out successfully' });
+      });
+    } else {
+      // If session doesn't exist, just clear cookies
+      res.clearCookie('connect.sid', {
+        path: '/',
+        httpOnly: true,
+        sameSite: 'None',
+        secure: true
+      });
+
+      res.clearCookie('token', {
+        path: '/',
+        httpOnly: true,
+        sameSite: 'None',
+        secure: true
+      });
+
+      return res.status(200).json({ message: 'No session but cookies cleared' });
+    }
   });
 });
+
 
 router.get("/user", verifyToken, (req, res) => {
   // If verifyToken middleware passed, user info should be in req.user or req.payload (depends on your middleware)

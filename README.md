@@ -6,7 +6,7 @@
 
 ## 🏠 Homepage Preview
 
-![Homepage Screenshot](assets/HomePageimg.png)
+![Homepage Screenshot](assets/HomePage.png)
 
 ---
 
@@ -38,7 +38,7 @@
 
 ## 🖼️ Preview
 
-![Website Screenshot](assets/demoimg.png)  
+![Website Screenshot](assets/Preview.png)  
 _A clean and responsive interface built using Tailwind CSS, DaisyUI, and React._
 
 ---
